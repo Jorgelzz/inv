@@ -10,7 +10,6 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import logo from "components/vetore_logo.png";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -43,31 +42,30 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-
 export default function App() {
   return (
     <>
-    <meta />
+      <meta />
       <div className="bg-gray-700 shadow-2xs p-4">
-        <nav className="container mx-auto flex justify-between text-3xl">
+        <nav className="container mx-auto flex justify-between p-3 text-3xl">
           <NavLink to={"/"} className={"underline font-bold text-blue-600"}>
             VETORE
           </NavLink>
           <NavLink
-            to="/list"
-            className={({ isActive }) =>
-              isActive ? "text-white" : "hover:text-white"
-            }
-          >
-            Lista de itens
-          </NavLink>
-          <NavLink
             to="new"
             className={({ isActive }) =>
-              isActive ? "text-white" : "hover:text-white"
+              isActive ? "text-blue-300" : "hover:text-white"
             }
           >
             Adicionar Item
+          </NavLink>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "text-blue-300" : "hover:text-white"
+            }
+          >
+            Lista de itens
           </NavLink>
         </nav>
       </div>
